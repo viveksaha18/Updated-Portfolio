@@ -16,7 +16,7 @@ const projects = [
     description:
       "A web application to efficiently manage and track student attendance. It includes features for adding, updating, and viewing attendance data with a MySQL database integration.",
     tech: "Next.js, React.js, Tailwind CSS, Node.js, Express.js, MySQL",
-    image: "/attendance-system.png",
+    image: "/student-attendance-tracking.png",
     demo: "https://github.com/viveksaha18/student-attendance-tracking-system", // You can later replace this with a live link
     source: "https://github.com/viveksaha18/student-attendance-tracking-system",
   },
