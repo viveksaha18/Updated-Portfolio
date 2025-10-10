@@ -22,9 +22,9 @@ export default function Page() {
           <h3 className="text-2xl font-semibold mb-4 text-blue-300">
             Get in Touch
           </h3>
-          <p>Email: <a href="mailto:viveksaha096@gmail.com" className="text-blue-400 hover:underline">yourname@example.com</a></p>
-          <p>Phone: <a href="tel:8093189895" className="text-blue-400 hover:underline">+91 1234567890</a></p>
-          <p>Location: <span className="text-blue-400">City, State, India</span></p>
+          <p>Email: <a href="mailto:viveksaha096@gmail.com" className="text-blue-400 hover:underline">viveksaha096@gmail.com</a></p>
+          <p>Phone: <a href="tel:8093189895" className="text-blue-400 hover:underline">+91 8093189895</a></p>
+          <p>Location: <span className="text-blue-400">Bhunbhaneswar, Odisha, India</span></p>
           <p className="text-gray-300">
             Feel free to reach out for internships, collaborations, or just to say hi!
           </p>
