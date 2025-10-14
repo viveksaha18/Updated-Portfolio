@@ -6,8 +6,8 @@ import { SiLeetcode, SiCodeforces, SiGeeksforgeeks } from "react-icons/si";
   const skills = ["C/C++", "MySQL", "JavaScript", "React.js"];
 
 const codingProfiles = [
-  { name: "LeetCode", icon: <SiLeetcode />, link: "https://leetcode.com/yourusername" },
-  { name: "GFG", icon: <SiGeeksforgeeks />, link: "https://auth.geeksforgeeks.org/user/yourusername" },
+  { name: "LeetCode", icon: <SiLeetcode />, link: "https://leetcode.com/u/viveksaha/" },
+  { name: "GFG", icon: <SiGeeksforgeeks />, link: "https://www.geeksforgeeks.org/user/viveksa0eo7/" },
   { name: "Codeforces", icon: <SiCodeforces />, link: "https://codeforces.com/profile/yourusername" },
 ];
 
