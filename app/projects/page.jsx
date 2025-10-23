@@ -3,6 +3,15 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Learnify",
+    description:
+      "An AI-powered online learning platform that helps users learn through personalized video lessons and real-time chapter tracking. It integrates YouTube API for video learning, Google Gemini API for smart course generation, and a responsive dashboard for progress management.",
+    tech: "Next.js, React.js, Tailwind CSS, Node.js, Express.js, PostgreSQL (Neon), Google Gemini API, YouTube API, Vercel",
+    image: "/learnify.png",
+    demo: "https://learnify-two-theta.vercel.app/",
+    source: "https://github.com/viveksaha18/Learnify",
+  },
+  {
     title: "Interview Ready",
     description:
       "A web app that helps users practice interviews with AI-driven feedback using Google Gemini API. It includes features to record answers, review them, and track user progress over time.",
@@ -17,7 +26,7 @@ const projects = [
       "A web application to efficiently manage and track student attendance. It includes features for adding, updating, and viewing attendance data with a MySQL database integration.",
     tech: "Next.js, React.js, Tailwind CSS, Node.js, Express.js, MySQL",
     image: "/student-attendance-tracking.png",
-    demo: "https://github.com/viveksaha18/student-attendance-tracking-system", // You can later replace this with a live link
+    demo: "https://github.com/viveksaha18/student-attendance-tracking-system",
     source: "https://github.com/viveksaha18/student-attendance-tracking-system",
   },
 ];
@@ -41,16 +50,17 @@ export default function Page() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: idx * 0.2 }}
           >
-            {/* Left Side - Screenshot */}
-            <div className="md:w-1/2 flex justify-center">
+            <div className="md:w-1/2 flex flex-col justify-center items-center text-center">
               <img
                 src={project.image}
                 alt={project.title}
                 className="rounded-2xl shadow-lg border-4 border-gray-700 object-cover w-full md:w-[400px] h-[250px]"
               />
+              <p className="text-sm text-gray-400 mt-2 italic">
+                (Project Screenshot)
+              </p>
             </div>
 
-            {/* Right Side - Description + Links */}
             <div className="md:w-1/2 flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl font-semibold mb-3 text-blue-300">
