@@ -120,3 +120,114 @@
     @apply bg-background text-foreground;
   }
 }
+.animated-bg {
+  background: linear-gradient(-45deg, #1e1e1e, #0f0f1a, #00111f, #1a0033);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animated background overlay and follow-circle */
+
+.animated-bg-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0; /* sits above the body background but below content */
+  overflow: visible;
+}
+
+/* Main glow */
+.follow-circle {
+  position: fixed; /* fixed so JS translate3d(x,y) maps to viewport coords */
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.06), rgba(255,255,255,0) 24%),
+              radial-gradient(circle at 70% 70%, var(--accent-2, rgba(0,146,255,0.12)), rgba(0,146,255,0) 48%);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35), inset 0 0 80px rgba(255,255,255,0.02);
+  filter: blur(36px) saturate(120%);
+  mix-blend-mode: screen;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.35s ease, transform 0.12s linear;
+  will-change: transform;
+  left: 0; /* ensure no left/top offset from CSS */
+  top: 0;
+  opacity: 0.95;
+}
+
+@media (max-width: 640px) {
+  .follow-circle {
+    width: 140px;
+    height: 140px;
+    filter: blur(24px) saturate(110%);
+  }
+}
+
+/* Small layered dots for depth */
+.follow-dot {
+  position: fixed;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.9), rgba(255,255,255,0.06) 35%), var(--accent-1, rgba(150, 180, 255, 0.2));
+  filter: blur(8px) saturate(120%);
+  opacity: 0.16;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+}
+
+.follow-dot.follow-dot-0 { width: 16px; height:16px; }
+.follow-dot.follow-dot-1 { width: 20px; height:20px; }
+.follow-dot.follow-dot-2 { width: 26px; height:26px; }
+.follow-dot.follow-dot-3 { width: 18px; height:18px; }
+
+/* Make background colors subtle and professional */
+:root {
+  --accent-1: rgba(124, 170, 255, 0.12);
+  --accent-2: rgba(0, 150, 255, 0.10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .follow-circle, .follow-dot { transition: none !important; animation: none !important; }
+}
+
+/* Toggle button */
+.animated-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(20,20,20,0.6);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #e6eefc;
+  padding: 8px 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px) saturate(120%);
+  cursor: pointer;
+  font-size: 12px;
+}
+.animated-toggle .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.45), 0 0 6px rgba(255,255,255,0.02) inset;
+}
+.animated-toggle .dot.on { background: linear-gradient(180deg,#4dd0e1,#0077ff); box-shadow: 0 6px 18px rgba(0,120,255,0.18); }
+.animated-toggle .dot.off { background: rgba(150,150,150,0.34); box-shadow: none; }
+.animated-toggle .label { opacity: 0.9; font-weight: 600; letter-spacing: 0.6px; }
+
+@media (max-width: 640px) {
+  .animated-toggle { right: 12px; bottom: 12px; padding: 7px 8px; }
+  .animated-toggle .label { display: none; }
+}
+
+
