@@ -1,19 +1,18 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaDownload, FaEye } from "react-icons/fa";
-import { SiLeetcode, SiCodeforces, SiGeeksforgeeks } from "react-icons/si";
+import { SiLeetcode,  SiGeeksforgeeks } from "react-icons/si";
 
 const skills = ["C/C++", "MySQL", "JavaScript", "React.js"];
 
 const codingProfiles = [
   { name: "LeetCode", icon: <SiLeetcode />, link: "https://leetcode.com/u/viveksaha/" },
   { name: "GFG", icon: <SiGeeksforgeeks />, link: "https://www.geeksforgeeks.org/user/viveksa0eo7/" },
-  { name: "Codeforces", icon: <SiCodeforces />, link: "https://codeforces.com/profile/yourusername" },
 ];
 
 const socialLinks = [
-  { name: "LinkedIn", icon: <FaLinkedin />, link: "https://www.linkedin.com/in/yourusername" },
-  { name: "GitHub", icon: <FaGithub />, link: "https://github.com/yourusername" },
+  { name: "LinkedIn", icon: <FaLinkedin />, link: "https://www.linkedin.com/in/vivek-saha-7774b42b9/" },
+  { name: "GitHub", icon: <FaGithub />, link: "https://github.com/viveksaha18" },
 ];
 
 export default function Skills() {
@@ -28,7 +27,7 @@ export default function Skills() {
         transition={{ duration: 0.8 }}
         className="text-5xl font-extrabold mb-14 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
       >
-        My Skills
+        Skills
       </motion.h2>
 
       <motion.div
@@ -92,7 +91,7 @@ export default function Skills() {
         <h3 className="text-3xl font-semibold mb-8 text-green-400">My Resume</h3>
         <div className="flex justify-center gap-6 flex-wrap">
           <motion.a
-            href="/resume.pdf"
+            href="/latestResume.pdf"
             target="_blank"
             whileHover={{ scale: 1.1 }}
             className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg transition"
